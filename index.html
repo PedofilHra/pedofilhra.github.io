@@ -3,19 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download Link</title>
-    <style>
-        /* Define a font family and make it bold */
-        body {
-            font-family: 'Dosis', sans-serif;
-            font-weight: bold;
-        }
-    </style>
+    <title>Browse Files</title>
 </head>
 <body>
 
-<!-- Replace 'yourfile.pdf' with the actual file you want to link to -->
-<a href="myw3schoolsimage.jpg" download>/Download The Cute File!/</a>
+<h2>Files Directory</h2>
+
+<!-- File input element to browse files -->
+<input type="file" id="images" multiple directory webkitdirectory>
+<button onclick="browseFiles()">Browse</button>
+
+<!-- Display selected files -->
+<div id="fileList"></div>
+
+<script>
+    function browseFiles() {
+        const fileList = document.getElementById('images');
+        const fileInput = document.getElementById('images');
+        
+        // Clear existing list
+        fileList.innerHTML = '';
+        
+        // Loop through selected files and display their names
+        for (const file of fileInput.files) {
+            const listItem = document.createElement('div');
+            listItem.textContent = file.name;
+            
+            // Check if the file extension is jpg or video, then force download
+            if (file.name.endsWith('.jpg') || file.name.endsWith('.jpeg') || file.name.endsWith('.mp4') || file.name.endsWith('.avi') || file.name.endsWith('.mov')) {
+                listItem.style.cursor = 'pointer';
+                listItem.title = 'Click to download';
+                listItem.onclick = function() {
+                    downloadFile(file);
+                };
+            }
+            
+            fileList.appendChild(listItem);
+        }
+    }
+    
+    // Function to force download a file
+    function downloadFile(file) {
+        const downloadLink = document.createElement('a');
+        downloadLink.href = URL.createObjectURL(file);
+        downloadLink.download = file.name;
+        downloadLink.click();
+    }
+</script>
 
 </body>
 </html>
