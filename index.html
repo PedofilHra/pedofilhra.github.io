@@ -22,9 +22,9 @@
 
 <script>
     // Function to fetch directory contents
-    function fetchDirectoryContents(directory) {
+    function fetchDirectoryContents() {
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', directory);
+        xhr.open('GET', 'directory.php');
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 if (xhr.status === 200) {
@@ -45,7 +45,7 @@
             if (file.trim() !== '') {
                 var fileName = file.split('/').pop(); // Get just the file name
                 var link = document.createElement('a');
-                link.href = file;
+                link.href = 'images/' + fileName;
                 link.textContent = fileName;
                 link.className = 'file-link';
                 fileListDiv.appendChild(link);
@@ -55,7 +55,7 @@
 
     // Fetch directory contents when the page loads
     window.onload = function() {
-        fetchDirectoryContents('images/');
+        fetchDirectoryContents();
     };
 </script>
 
