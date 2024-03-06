@@ -3,53 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Browse Files</title>
+    <title>Browse Images</title>
 </head>
 <body>
 
-<h2>Files Directory</h2>
+<h2>Images Directory</h2>
 
-<!-- File input element to browse files -->
-<input type="file" id="images" multiple directory webkitdirectory>
-<button onclick="browseFiles()">Browse</button>
+<?php
+// Define the directory to scan
+$directory = 'images';
 
-<!-- Display selected files -->
-<div id="fileList"></div>
-
-<script>
-    function browseFiles() {
-        const fileList = document.getElementById('images');
-        const fileInput = document.getElementById('images');
-        
-        // Clear existing list
-        fileList.innerHTML = '';
-        
-        // Loop through selected files and display their names
-        for (const file of fileInput.files) {
-            const listItem = document.createElement('div');
-            listItem.textContent = file.name;
-            
-            // Check if the file extension is jpg or video, then force download
-            if (file.name.endsWith('.jpg') || file.name.endsWith('.jpeg') || file.name.endsWith('.mp4') || file.name.endsWith('.avi') || file.name.endsWith('.mov')) {
-                listItem.style.cursor = 'pointer';
-                listItem.title = 'Click to download';
-                listItem.onclick = function() {
-                    downloadFile(file);
-                };
+// Check if the directory exists
+if (is_dir($directory)) {
+    // Open the directory
+    if ($handle = opendir($directory)) {
+        // Loop through each file in the directory
+        while (($file = readdir($handle)) !== false) {
+            // Exclude . and .. directories
+            if ($file != "." && $file != "..") {
+                // Display the file with a link
+                echo "<div><a href='$directory/$file'>$file</a></div>";
             }
-            
-            fileList.appendChild(listItem);
         }
+        // Close the directory handle
+        closedir($handle);
     }
-    
-    // Function to force download a file
-    function downloadFile(file) {
-        const downloadLink = document.createElement('a');
-        downloadLink.href = URL.createObjectURL(file);
-        downloadLink.download = file.name;
-        downloadLink.click();
-    }
-</script>
+}
+?>
 
 </body>
 </html>
