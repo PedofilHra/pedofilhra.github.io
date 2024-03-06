@@ -18,45 +18,7 @@
 
 <h2>Images Directory</h2>
 
-<div id="fileList"></div>
-
-<script>
-    // Function to fetch directory contents
-    function fetchDirectoryContents() {
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'directory.php');
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.status === 200) {
-                    displayFiles(xhr.responseText);
-                } else {
-                    console.error('Error fetching directory contents:', xhr.status);
-                }
-            }
-        };
-        xhr.send();
-    }
-
-    // Function to display files as links
-    function displayFiles(fileList) {
-        var fileListDiv = document.getElementById('fileList');
-        var files = fileList.split('\n');
-        files.forEach(function(file) {
-            if (file.trim() !== '') {
-                var fileName = file.split('/').pop(); // Get just the file name
-                var link = document.createElement('a');
-                link.href = 'images/' + fileName;
-                link.textContent = fileName;
-                link.className = 'file-link';
-                fileListDiv.appendChild(link);
-            }
-        });
-    }
-
-    // Fetch directory contents when the page loads
-    window.onload = function() {
-        fetchDirectoryContents();
-    };
-</script>
+<iframe src="images/" width="100%" height="500px"></iframe>
 
 </body>
+</html>
