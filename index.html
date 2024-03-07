@@ -20,6 +20,12 @@
 <script>
 function toggleTheme() {
   document.body.classList.toggle('light-theme');
+  var themeBtn = document.querySelector('.theme-btn');
+  if (document.body.classList.contains('light-theme')) {
+    themeBtn.style.color = 'black'; // Set text color to black for light theme
+  } else {
+    themeBtn.style.color = 'white'; // Set text color to white for dark theme
+  }
 }
 </script>
 
