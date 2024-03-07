@@ -1,15 +1,18 @@
-body {
+body.dark-theme {
+  background-color: black;
+  color: white;
+}
+
+body.light-theme {
+  background-color: white;
+  color: black;
+}
+
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 0;
-  background-color: black; /* Set background color to black */
-}
-
-.container {
-  display: flex; /* Set display to flex */
-  align-items: center;
 }
 
 .btn {
