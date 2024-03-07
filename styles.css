@@ -1,6 +1,6 @@
 body {
 	height: 100vh;
-	background: #19092d;
+	background: black; /* Change background color to black */
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -11,8 +11,8 @@ button {
 	padding: 40px 80px;
 	border: none;
 	cursor: pointer;
-	font-family: 'Dosis', sans-serif; /* Use Dosis font family */
-	font-weight: bold; /* Make the text bold */
+	font-family: 'Dosis', sans-serif;
+	font-weight: bold;
 }
 
 /* PIERWSZY SPOSOB WYKORZYSTANIE CIENIA */
