@@ -1,54 +1,30 @@
 body {
-	height: 100vh;
-	background: black; /* Change background color to black */
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: black; /* Set background color to black */
 }
 
-button {
-	margin: 20px;
-	padding: 40px 80px;
-	border: none;
-	cursor: pointer;
-	font-family: 'Dosis', sans-serif;
-	font-weight: bold;
+.container {
+  display: flex; /* Set display to flex */
+  align-items: center;
 }
 
-/* PIERWSZY SPOSOB WYKORZYSTANIE CIENIA */
-.first {
-	background: #19c3d6;
-	box-shadow: inset 0px 0px 0px 0px #ff0099;
-	transition: all 0.5s ease-in-out;
-}
-.first:hover {
-	box-shadow: inset 0px -200px 0px 0px #ff0099;
-}
-
-/* DRUGI SPOSOB DLUZSZY ALE BARDZIEJ UNIWERSALNY*/
-.sec {
-	background: none;
-	position: relative;
-	overflow: hidden;
+.btn {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: blue;
+  color: white;
+  font-size: 16px;
+  font-family: 'Dosis', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.sec:before,
-.sec:after {
-	content: "";
-	background: #19c3d6;
-	display: block;
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	z-index: -2;
-}
-.sec:after {
-	background: #ff0099;
-	top: 100%;
-	transition: all 0.5s ease-in-out;
-}
-.sec:hover:after {
-	top: 0;
+.btn:hover {
+  background-color: purple;
 }
