@@ -1,0 +1,46 @@
+
+Sure! Here's the HTML code for two buttons that redirect you to another website:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buttons</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<button onclick="window.location.href='https://example.com'" class="btn">Button 1</button>
+<button onclick="window.location.href='https://example.org'" class="btn">Button 2</button>
+
+</body>
+</html>
+And here's the CSS code to style the buttons and center them, making them blue by default and purple when hovered over:
+
+css
+Copy code
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.btn {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: blue;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: purple;
+}
