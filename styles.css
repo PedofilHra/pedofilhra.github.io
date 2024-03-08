@@ -56,7 +56,7 @@ body.light-theme {
   right: 10px;
   background-color: transparent;
   border: none;
-  color: blue; /* Text color */
+  color: white; /* Text color */
   cursor: pointer;
   font-family: 'Dosis', sans-serif;
   font-weight: bold;
