@@ -30,10 +30,20 @@ body.light-theme {
   overflow: hidden;
 }
 
-.btn:hover {
-  background: linear-gradient(180deg, #7d53ea, #cf6fff);
-  background-size: 100% 300%;
-  transition: background 0.5s;
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, purple);
+  transition: top 0.3s;
+  z-index: -1;
+}
+
+.btn:hover::before {
+  top: 0;
 }
 
 .theme-btn {
@@ -47,3 +57,4 @@ body.light-theme {
   font-family: 'Dosis', sans-serif;
   font-weight: bold;
 }
+
