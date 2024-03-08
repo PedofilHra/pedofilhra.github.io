@@ -23,7 +23,7 @@ body.light-theme {
   background: linear-gradient(180deg, transparent, purple); /* Gradient background */
   background-size: 100% 0; /* Initial background size */
   background-position: bottom; /* Start the gradient from the bottom */
-  color: white;
+  color: blue; /* Text color */
   font-size: 16px;
   font-family: 'Dosis', sans-serif;
   font-weight: bold;
@@ -48,4 +48,3 @@ body.light-theme {
   font-family: 'Dosis', sans-serif;
   font-weight: bold;
 }
-
