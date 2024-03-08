@@ -26,10 +26,14 @@ body.light-theme {
   font-family: 'Dosis', sans-serif;
   font-weight: bold;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn:hover {
-  background-color: purple;
+  background: linear-gradient(180deg, #7d53ea, #cf6fff);
+  background-size: 100% 300%;
+  transition: background 0.5s;
 }
 
 .theme-btn {
