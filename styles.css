@@ -23,14 +23,14 @@ body.light-theme {
   background: linear-gradient(180deg, transparent, purple); /* Gradient background */
   background-size: 100% 0; /* Initial background size */
   background-position: bottom; /* Start the gradient from the bottom */
-  color: gray	;
+  color: white; /* Default text color */
   font-size: 16px;
   font-family: 'Dosis', sans-serif;
   font-weight: bold;
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition: background-size 0.3s; /* Transition for the background size */
+  transition: background-size 0.3s, color 0.3s; /* Transition for the background size and text color */
 }
 
 .btn::before {
@@ -62,3 +62,7 @@ body.light-theme {
   font-weight: bold;
 }
 
+/* Adjust text color for light theme */
+body.light-theme .btn {
+  color: black;
+}
